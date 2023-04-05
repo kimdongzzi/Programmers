@@ -1,12 +1,7 @@
 function solution(A,B){
-    let aArr = A.sort((a,b) => a - b)
-    let bArr = B.sort((a,b) => b - a)
-    let answer = []
+    A.sort((a,b) => a - b)
+    B.sort((a,b) => b - a)
     
-    for(i in aArr){
-      answer.push(aArr[i] * bArr[i])
-    }
-    
-    return answer.reduce((acc, val) => acc + val)
+    return A.reduce((acc, val, idx) => acc + val * (B[idx]), 0)
 
 }
