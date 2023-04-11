@@ -1,5 +1,7 @@
 function solution(price, money, count) {
-    let cost = new Array(count).fill(price)
-    let result = cost.reduce((acc, cal, idx) => acc + (cal * (idx + 1)), 0)
+    let result = 0;
+    for(let i=1; i<= count; i++){
+        result += price * i
+    }
     return result <= money ? 0 : result - money
 }
