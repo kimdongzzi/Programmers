@@ -1,11 +1,11 @@
 function solution(s) {
     let answer = [0, 0]
     while(s !== "1"){
-        s = s.split("")
-        let one = s.filter(x => x === "1").length;
+        let len = s.length;
+        s = s.match(/1/g).length;
         answer[0]++
-        answer[1] += s.length - one
-        s = one.toString(2)
+        answer[1] += len - s
+        s = s.toString(2)
     }
     return answer
 }
